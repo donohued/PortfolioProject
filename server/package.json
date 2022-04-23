@@ -1,0 +1,18 @@
+{
+  "name": "donohuelabs",
+  "version": "1.0.0",
+  "description": "portfolio site ig",
+  "main": "server.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "author": "David Donohue",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
