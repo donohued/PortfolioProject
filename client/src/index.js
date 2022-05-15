@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import SecretPage from './routes/secretpage'
-import App from './App';
+import SecretPage from './components/Pages/Secret/secretpage'
+import App from './components/App/App';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,3 +18,5 @@ root.render(
     </Router>
   </React.StrictMode>
 );
+
+

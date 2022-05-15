@@ -2,14 +2,13 @@ import './head.css'
 import { Link } from "react-router-dom";
 
 import Canvas from './canvas';
-import SecretPage from '..//routes/secretpage'
 
 import PropTypes from 'prop-types'
 
 const Header = (props) => {
 
   const draw = (ctx, frameCount) => {
-
+    
     const wave = {
       y: ctx.canvas.height*0.8,
       length: 0.010,
@@ -31,6 +30,13 @@ const Header = (props) => {
       frequency: frameCount/345
     }
 
+    const wave4 = {
+      y: ctx.canvas.height/2,
+      length: 0.11,
+      amplitude: 10,
+      frequency: frameCount * Math.sin(100)
+    }
+
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
     ctx.fillStyle = '#f8dbff'
     ctx.beginPath()
@@ -40,10 +46,13 @@ const Header = (props) => {
         ctx.lineTo(i,
           wave.y + 
           (
-            Math.sin(i * wave.length + wave.frequency / (i + 100)) * wave.amplitude)
+            (Math.sin(i * wave.length + wave.frequency / (i + 100)) * wave.amplitude)
            * (Math.sin(i/3 * wave2.length + wave2.frequency) * wave2.amplitude)
            + (Math.cos(i/2 * wave3.length + wave3.frequency) * wave3.amplitude)
-           + (Math.cos(i/2 * wave3.length + wave3.frequency) * (wave3.amplitude*2))/3
+           + ((Math.cos(i/2 * wave3.length + wave3.frequency) * (wave3.amplitude*2))/3)
+           //+ (Math.cos(i * (wave4.length) + wave4.frequency) * wave4.amplitude)
+           )/2
+           
            )
       }
 
@@ -62,7 +71,7 @@ const Header = (props) => {
           <h1 id='header-title'><Link to='/'>Donohue Labs</Link></h1>
           <span className='nav-container'>
             <ul className='nav'>
-              <li className="nav-item" >
+              <li className="nav-item lmost" >
                 <Link className="navlink" to='/projects'>Projects</Link> 
               </li>
               <li className="nav-item">

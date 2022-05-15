@@ -1,0 +1,50 @@
+#content-wrapper{
+    height: 1000px;
+    width: 100%;
+    background-color: #f8dbff;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.project-tile-wrapper{
+    height: fit-content;
+    display: flex;
+    padding: 1rem;
+    width: 80%;
+    background-color: white;
+    font-size: clamp(.6rem, 1.5vw, 1.3rem);
+}
+.project-tile-thumbnail{
+    width: 25%;
+    min-width: 100px;
+    margin-right: 1rem;
+    aspect-ratio: 1/1;
+    background-color: grey;
+}
+
+.project-tile-header{
+    font-size: clamp(1.3rem, 4vw, 3.75rem);
+    height: fit-content;
+    border-bottom: 1px solid grey;
+    width: 100%;
+}
+.project-tile-info{
+    width: 100%;
+    text-align: left;
+}
+
+.project-tile-short-desc{
+    height: fit-content;
+    border-bottom: 1px solid grey;
+}
+
+.project-tile-madewith{
+    display: flex;
+}
+
+.project-resource-box{
+    aspect-ratio: 1/1;
+    border: 1px solid black;
+    margin: 0px .26rem;
+}
+

@@ -8,13 +8,14 @@ const Canvas = props => {
         const canvas = canvasRef.current
         const context = canvas.getContext('2d')
         
-        resizeCanvas(canvas)
+        
 
         let frameCount = 0
         let animationFrameId
         
         const render = () => {
             frameCount++
+            resizeCanvas(canvas)
             draw(context, frameCount)
             animationFrameId = window.requestAnimationFrame(render)
         }
@@ -29,18 +30,20 @@ const Canvas = props => {
         const { width, height } = canvas.getBoundingClientRect()
         
         if (canvas.width !== width || canvas.height !== height) {
-          const { devicePixelRatio:ratio=1 } = window
-          const context = canvas.getContext('2d')
-          canvas.width = width*ratio
-          canvas.height = height*ratio
-          context.scale(ratio, ratio)
-          return true
+            //const { devicePixelRatio:ratio=1 } = window
+            const ratio = 1
+            const context = canvas.getContext('2d')
+            canvas.width = width*ratio
+          
+            canvas.height = height*ratio
+            context.scale(ratio, ratio)
+            return true
         }
     
         return false
       }
 
-    return <canvas id='bg-canvas' ref={canvasRef} {...props}/>
+    return <canvas id='wiggle-canvas' ref={canvasRef} {...props}/>
 }
 
 

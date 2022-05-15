@@ -2,22 +2,25 @@ import React, { useEffect, useRef } from 'react'
 import {Routes, Route} from 'react-router-dom'
 import { gsap } from "gsap";
 
-import Header from './components/headchunks'
+import Header from '../Header/headchunks'
 
-import ProjectList from './routes/projects'
-import SkillsPage from './routes/skills'
-import ResumePage from './routes/resume'
-import AboutPage from './routes/about'
+import ProjectList from '../Pages/Projects/projects'
+import SkillsPage from '../Pages/Skills/skills'
+import ResumePage from '../Pages/Resume/resume'
+import AboutPage from '../Pages/About/about'
 
+import './App.css'
 import * as dat from 'dat.gui'
 
 function App() {
 
-  
+  //L8R Tasks: 
+  //Reduce resizing of canvas calls
+  //make it better for siknny screens
 
   return (
 
-      <div>
+      <>
         
 
         <Header />
@@ -32,10 +35,12 @@ function App() {
 
           
         </Routes>
+
+        
         
 
 
-      </div>
+      </>
 
     
     
